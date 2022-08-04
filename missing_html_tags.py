@@ -23,5 +23,20 @@ with open(file_path, "r") as file:
         if closing_count > 0:
             element_counts[closing_tag] = closing_count
 
+programming_characters = ["{", "}", "(", ")", "[", "]"]
+programming_character_counts = {}
+
+with open(file_path, "r") as file:
+    file_contents = ""
+
+    for line in file:
+        file_contents += line
+
+    for character in programming_characters:
+        character_count = file_contents.count(character)
+        if character_count > 0:
+            programming_character_counts[character] = character_count
+
 pprint.pprint(element_counts, sort_dicts=False)
+pprint.pprint(programming_character_counts, sort_dicts=False)
 user_input = input("Press enter to close...")
