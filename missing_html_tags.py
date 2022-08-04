@@ -15,10 +15,12 @@ with open(file_path, "r") as file:
         closing_tag = f"</{word}"
 
         opening_count = file_contents.count(opening_tag)
-        element_counts[opening_tag] = opening_count
+        if opening_count > 0:
+            element_counts[opening_tag] = opening_count
 
         closing_count = file_contents.count(closing_tag)
-        element_counts[closing_tag] = closing_count
+        if closing_count > 0:
+            element_counts[closing_tag] = closing_count
 
 pprint.pprint(element_counts, sort_dicts=False)
 user_input = input("Press enter to close...")
