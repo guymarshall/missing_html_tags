@@ -20,5 +20,5 @@ with open(file_path, "r") as file:
         closing_count = file_contents.count(closing_tag)
         element_counts[closing_tag] = closing_count
 
-pprint.pprint(element_counts)
+pprint.pprint(element_counts, sort_dicts=False)
 user_input = input("Press enter to close...")
